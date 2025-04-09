@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Backseat Studio</title>
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <div id="splash">
+    <span class="splash-icon">⛐</span>
+  </div>
+  
+
+  <!-- TOP BAR (overlayed on top of the images) -->
+  <header id="top-bar">
+    <!-- Left: Studio MHK / Back (icon wrapped in a span) -->
+    <div id="studio-toggle">
+      <span class="studio-icon">⛐</span> Backseat Studio
+    </div>
+    <!-- Center: Project numbers (populated dynamically) -->
+    <nav id="project-numbers"> </nav>
+    <!-- Right: (View All) / (Back) for Overview mode -->
+    <div id="view-toggle">(View All)</div>
+  </header>
+
+  <!-- SCROLL CONTAINER: holds two full-viewport sections -->
+  <div id="scroll-container">
+    <!-- Section 1: Slideshow -->
+    <section id="slideshow-section">
+      <main id="fullscreen-container">
+        <div id="image-wrapper">
+          <img id="main-image" src="" alt="Current Project Image" />
+        </div>
+        <div id="caption-bar">
+          <p id="image-caption"></p>
+        </div>
+      </main>
+    </section>
+    <!-- Section 2: Info Section -->
+    <section id="info-section">
+      <div class="info-content">
+        <p>LDesignstiudieorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- OVERVIEW CONTAINER (for grid mode) -->
+  <section id="overview-container">
+    <div id="overview-grid">
+      <!-- Thumbnails inserted dynamically -->
+    </div>
+    <!-- Global caption overlay in overview mode -->
+    <div id="overview-caption"></div>
+  </section>
+
+  <!-- HOVER THUMBNAIL FOR PROJECT NUMBERS -->
+  <img id="project-hover-thumbnail" alt="Project Thumbnail" />
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>

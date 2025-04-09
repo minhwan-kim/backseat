@@ -1,0 +1,336 @@
+[
+  {
+    "number": 1,
+    "title": "project_01",
+    "date": "",
+    "folder": "images/project_01",
+    "thumb": "images/project_01/thumb.jpg",
+    "images": [
+      {
+        "src": "images/project_01/Vital_Sign_0.jpg",
+        "caption": "project_01 - Vital_Sign_0.jpg"
+      },
+      {
+        "src": "images/project_01/Vital_Sign_1.jpg",
+        "caption": "project_01 - Vital_Sign_1.jpg"
+      },
+      {
+        "src": "images/project_01/Vital_Sign_2.jpg",
+        "caption": "project_01 - Vital_Sign_2.jpg"
+      },
+      {
+        "src": "images/project_01/Vital_Sign_3.jpg",
+        "caption": "project_01 - Vital_Sign_3.jpg"
+      },
+      {
+        "src": "images/project_01/Vital_Sign_4.jpg",
+        "caption": "project_01 - Vital_Sign_4.jpg"
+      }
+    ]
+  },
+  {
+    "number": 2,
+    "title": "project_02",
+    "date": "",
+    "folder": "images/project_02",
+    "thumb": "images/project_02/thumb.jpg",
+    "images": [
+      {
+        "src": "images/project_02/Cruxgg_1010.png",
+        "caption": "project_02 - Cruxgg_1010.png"
+      },
+      {
+        "src": "images/project_02/GL02-–-TV-Mockup2.jpg",
+        "caption": "project_02 - GL02-–-TV-Mockup2.jpg"
+      },
+      {
+        "src": "images/project_02/image1.jpg",
+        "caption": "project_02 - image1.jpg"
+      },
+      {
+        "src": "images/project_02/image2.jpg",
+        "caption": "project_02 - image2.jpg"
+      }
+    ]
+  },
+  {
+    "number": 3,
+    "title": "project_03",
+    "date": "",
+    "folder": "images/project_03",
+    "thumb": "images/project_03/thumb.jpg",
+    "images": [
+      {
+        "src": "images/project_03/IN2579_002_CCCR-Full size JPEG.jpg",
+        "caption": "project_03 - IN2579_002_CCCR-Full size JPEG.jpg"
+      },
+      {
+        "src": "images/project_03/IN2579_004_CCCR-Full size JPEG.jpg",
+        "caption": "project_03 - IN2579_004_CCCR-Full size JPEG.jpg"
+      },
+      {
+        "src": "images/project_03/image1.jpg",
+        "caption": "project_03 - image1.jpg"
+      },
+      {
+        "src": "images/project_03/image2.jpg",
+        "caption": "project_03 - image2.jpg"
+      }
+    ]
+  },
+  {
+    "number": 4,
+    "title": "project_04",
+    "date": "",
+    "folder": "images/project_04",
+    "thumb": "images/project_04/thumb.jpg",
+    "images": [
+      {
+        "src": "images/project_04/AAO_3.jpg",
+        "caption": "project_04 - AAO_3.jpg"
+      },
+      {
+        "src": "images/project_04/AAO_3_2.jpg",
+        "caption": "project_04 - AAO_3_2.jpg"
+      },
+      {
+        "src": "images/project_04/AAO_4.jpg",
+        "caption": "project_04 - AAO_4.jpg"
+      },
+      {
+        "src": "images/project_04/thesisbook.gif",
+        "caption": "project_04 - thesisbook.gif"
+      }
+    ]
+  },
+  {
+    "number": 5,
+    "title": "project_05",
+    "date": "",
+    "folder": "images/project_05",
+    "thumb": "images/project_05/thumb.jpg",
+    "images": [
+      {
+        "src": "images/project_05/Nike_Future_Movement_New_Studio_Brand_Identity_Design25.png",
+        "caption": "project_05 - Nike_Future_Movement_New_Studio_Brand_Identity_Design25.png"
+      },
+      {
+        "src": "images/project_05/OTv1 Poster Mockup 012.png",
+        "caption": "project_05 - OTv1 Poster Mockup 012.png"
+      },
+      {
+        "src": "images/project_05/gardening_01.jpg",
+        "caption": "project_05 - gardening_01.jpg"
+      },
+      {
+        "src": "images/project_05/gardening_01_2.jpg",
+        "caption": "project_05 - gardening_01_2.jpg"
+      },
+      {
+        "src": "images/project_05/gardening_03.jpg",
+        "caption": "project_05 - gardening_03.jpg"
+      },
+      {
+        "src": "images/project_05/gardening_04.jpg",
+        "caption": "project_05 - gardening_04.jpg"
+      },
+      {
+        "src": "images/project_05/gardening_05.jpg",
+        "caption": "project_05 - gardening_05.jpg"
+      },
+      {
+        "src": "images/project_05/gardening_06.jpg",
+        "caption": "project_05 - gardening_06.jpg"
+      },
+      {
+        "src": "images/project_05/gardening_07.jpg",
+        "caption": "project_05 - gardening_07.jpg"
+      },
+      {
+        "src": "images/project_05/gardening_08.jpg",
+        "caption": "project_05 - gardening_08.jpg"
+      }
+    ]
+  },
+  {
+    "number": 6,
+    "title": "project_06",
+    "date": "",
+    "folder": "images/project_06",
+    "thumb": "images/project_06/thumb.jpg",
+    "images": [
+      {
+        "src": "images/project_06/image1.jpg",
+        "caption": "project_06 - image1.jpg"
+      },
+      {
+        "src": "images/project_06/image2.jpg",
+        "caption": "project_06 - image2.jpg"
+      }
+    ],
+    "cmsNumber": "06"
+  },
+  {
+    "number": 7,
+    "title": "project_07",
+    "date": "",
+    "folder": "images/project_07",
+    "thumb": "images/project_07/thumb.jpg",
+    "images": [
+      {
+        "src": "images/project_07/Bendito_Mockup-_CCC-T_Shirt-06.png",
+        "caption": "project_07 - Bendito_Mockup-_CCC-T_Shirt-06.png"
+      },
+      {
+        "src": "images/project_07/iPhone Mockup DS_001.png",
+        "caption": "project_07 - iPhone Mockup DS_001.png"
+      },
+      {
+        "src": "images/project_07/image1.jpg",
+        "caption": "project_07 - image1.jpg"
+      },
+      {
+        "src": "images/project_07/image2.jpg",
+        "caption": "project_07 - image2.jpg"
+      }
+    ]
+  },
+  {
+    "number": 8,
+    "title": "project_08",
+    "date": "",
+    "folder": "images/project_08",
+    "thumb": "images/project_08/thumb.jpg",
+    "images": [
+      {
+        "src": "images/project_08/The Poster Mockup 042.png",
+        "caption": "project_08 - The Poster Mockup 042.png"
+      },
+      {
+        "src": "images/project_08/image1.jpg",
+        "caption": "project_08 - image1.jpg"
+      },
+      {
+        "src": "images/project_08/image2.jpg",
+        "caption": "project_08 - image2.jpg"
+      }
+    ]
+  },
+  {
+    "number": 9,
+    "title": "project_09",
+    "date": "",
+    "folder": "images/project_09",
+    "thumb": "images/project_09/thumb.jpg",
+    "images": [
+      {
+        "src": "images/project_09/AAO_3.jpg",
+        "caption": "project_09 - AAO_3.jpg"
+      },
+      {
+        "src": "images/project_09/AAO_3_2.jpg",
+        "caption": "project_09 - AAO_3_2.jpg"
+      },
+      {
+        "src": "images/project_09/AAO_4.jpg",
+        "caption": "project_09 - AAO_4.jpg"
+      },
+      {
+        "src": "images/project_09/Herald Square Verizon Store 31st May 20237732_v1.jpg",
+        "caption": "project_09 - Herald Square Verizon Store 31st May 20237732_v1.jpg"
+      },
+      {
+        "src": "images/project_09/YP_3.gif",
+        "caption": "project_09 - YP_3.gif"
+      }
+    ]
+  },
+  {
+    "number": 10,
+    "title": "project_10",
+    "date": "",
+    "folder": "images/project_10",
+    "thumb": "images/project_10/thumb.jpg",
+    "images": [
+      {
+        "src": "images/project_10/gardening_01.jpg",
+        "caption": "project_10 - gardening_01.jpg"
+      },
+      {
+        "src": "images/project_10/gardening_01_2.jpg",
+        "caption": "project_10 - gardening_01_2.jpg"
+      },
+      {
+        "src": "images/project_10/gardening_03.jpg",
+        "caption": "project_10 - gardening_03.jpg"
+      },
+      {
+        "src": "images/project_10/gardening_04.jpg",
+        "caption": "project_10 - gardening_04.jpg"
+      },
+      {
+        "src": "images/project_10/gardening_05.jpg",
+        "caption": "project_10 - gardening_05.jpg"
+      },
+      {
+        "src": "images/project_10/gardening_06.jpg",
+        "caption": "project_10 - gardening_06.jpg"
+      },
+      {
+        "src": "images/project_10/gardening_07.jpg",
+        "caption": "project_10 - gardening_07.jpg"
+      },
+      {
+        "src": "images/project_10/gardening_08.jpg",
+        "caption": "project_10 - gardening_08.jpg"
+      }
+    ],
+    "cmsNumber": "10"
+  },
+  {
+    "number": 11,
+    "title": "project_11",
+    "date": "",
+    "folder": "images/project_11",
+    "thumb": "images/project_11/thumb.jpg",
+    "images": [
+      {
+        "src": "images/project_11/72-2.png",
+        "caption": "project_11 - 72-2.png"
+      },
+      {
+        "src": "images/project_11/72.png",
+        "caption": "project_11 - 72.png"
+      },
+      {
+        "src": "images/project_11/image1.jpg",
+        "caption": "project_11 - image1.jpg"
+      },
+      {
+        "src": "images/project_11/image2.jpg",
+        "caption": "project_11 - image2.jpg"
+      },
+      {
+        "src": "images/project_11/render1_223.jpg",
+        "caption": "project_11 - render1_223.jpg"
+      }
+    ]
+  },
+  {
+    "number": 12,
+    "title": "project_12",
+    "date": "",
+    "folder": "images/project_12",
+    "thumb": "images/project_12/thumb.jpg",
+    "images": [
+      {
+        "src": "images/project_12/The Poster Mockup 042.png",
+        "caption": "project_12 - The Poster Mockup 042.png"
+      },
+      {
+        "src": "images/project_12/The Poster Mockup 0422.jpg",
+        "caption": "project_12 - The Poster Mockup 0422.jpg"
+      }
+    ]
+  }
+]

@@ -1,0 +1,317 @@
+
+
+/* Disable text selection on the entire page */
+html, body, #fullscreen-container, #image-wrapper, #main-image,
+#top-bar, #project-numbers, #caption-bar {
+  -webkit-user-select: none;  /* Safari, iOS */
+  -moz-user-select: none;     /* Firefox */
+  -ms-user-select: none;      /* IE10+ */
+  user-select: none;          /* Standard */
+}
+/* ========== RESET & BASE ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  /* font-size: 1.02em; */
+  font-size: 18px;
+  line-height: 24px;
+  /* font-weight: bold; */
+  font-family: Arial, Helvetica, sans-serif;
+  /* background-color: #f4f5dc; */
+  background-color: #e1dfdb;
+  /* background-color: #ccc; */
+  overflow: hidden; /* Disable manual scrolling */
+  /* letter-spacing: 0.03rem; */
+  word-spacing: 0.03rem;
+}
+
+/* ========== TOP BAR ========== */
+#top-bar {
+  position: fixed;
+  top: 4px;
+  left: 0;
+  right: 0;
+  height: 40px;
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+}
+
+/* Left: Studio MHK / Back */
+#studio-toggle {
+  position: absolute;
+  left: 1rem;
+  cursor: pointer;
+  /* text-transform: uppercase; */
+  /* font-weight: bold; */
+  letter-spacing: 0;
+}
+
+#view-toggle:not(.back):hover {
+  color: #fd5000;
+}
+
+#studio-toggle:not(.back):hover {
+  color: #FFD12B !important;
+}
+
+
+/* Center: Project numbers */
+#project-numbers .project-number {
+  display: inline-block;   /* ensures a fixed-width "box" */
+  /* background-color: green; */
+  width: auto;           /* adjust as needed for double/triple-digit numbers */
+  text-align: center;      /* center the text within this box */
+  margin: 11px;
+  cursor: pointer;
+  /* color: black; */
+  font-weight: regular;
+  /* font-size: 12px; */
+  font-size: 0.8em;
+  font-kerning: auto;
+  color: rgba(0, 0, 0, 0.6);
+
+  
+  /* font-family: monospace; */
+}
+#project-numbers .project-number.active {
+  /* color: rgb(200, 255, 0); */
+  color: rgb(254, 254, 254);
+  background-color: rgba(98, 75, 247, 0.7);
+  
+  /* text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px; */
+
+  border-radius: 6px;
+  padding: 1px 8px 1px 8px;
+  margin-right: 3px;
+  margin-left: 3px;
+
+}
+
+/* Right: View All / Back for Overview */
+#view-toggle {
+  position: absolute;
+  right: 1rem;
+  cursor: pointer;
+  /* text-transform: uppercase; */
+  font-weight: regular;
+}
+#view-toggle.back {
+  color: black !important;
+}
+
+/* ========== SCROLL CONTAINER ========== */
+#scroll-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200vh; /* Two full viewports */
+  transition: transform 0.5s ease;
+  transform: translateY(0);
+}
+
+/* Each section occupies full viewport height */
+#slideshow-section,
+#info-section {
+  height: 100vh;
+  width: 100%;
+}
+
+/* ========== FULLSCREEN CONTAINER (Slideshow) ========== */
+#fullscreen-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: default;
+}
+
+#image-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 88vh;
+  /* left: 1vw; */
+  top: 6vh;
+
+}
+
+#main-image {
+  width: 100%;
+  height: 100%;
+  object-fit:contain;
+}
+
+/* CAPTION BAR (OVERLAY on image) */
+#caption-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  /* font-weight: bold; */
+  padding: 1em;
+  z-index: 2;
+  /* font-family: 'Courier New', Courier, monospace; */
+  /* background-color: #eff705; */
+  font-weight: regular;
+  color: #000;
+  letter-spacing: 1px;
+}
+
+/* ========== INFO SECTION ========== */
+#info-section {
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+  background-color: #fff;
+}
+.info-content {
+  max-width: 1000px;
+  text-align: left;
+  padding-left: 1.2rem;
+  padding-top: 10rem;
+}
+
+/* ========== OVERVIEW CONTAINER ========== */
+#overview-container {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease;
+  position: absolute;
+  top: 0; 
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  overflow: auto;
+  z-index: 2000;
+  padding: 40px;
+  padding-top: 4rem;
+}
+#overview-container.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+#overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 80px;
+}
+
+#overview-grid img {
+  width: 100%;
+  max-height: 160px;
+  object-fit: contain;
+  height: auto;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+#overview-caption {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 8rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  line-height: 8rem;
+  text-align: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  letter-spacing: -0.2rem;
+  color: rgb(247, 57, 19);
+  z-index: 9999;
+  width: 90vw;
+}
+
+/* ========== HOVER THUMBNAIL FOR PROJECT NUMBERS ========== */
+#project-hover-thumbnail {
+  position: absolute;
+  display: none;
+  width: 150px;
+  height: auto;
+  pointer-events: none;
+  background-color: #fff;
+  border-radius: 5%;
+  z-index: 9999;
+}
+
+.studio-icon {
+  font-size: 1.8em;  /* Increase the size of the icon */
+  vertical-align: middle;
+  color: rgb(0, 0, 0);
+  margin-right: -0.05em;
+}
+
+
+
+/* SPLASH ANIMATION */
+#splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5000;
+}
+
+.splash-icon {
+  font-size: 50em; /* Very big */
+  color: black;
+  animation: splashShake 0.43s ease-in-out, splashMove 0.65s ease-in-out 0.53s forwards;
+}
+
+@keyframes splashShake {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(-5px, 0) rotate(-5deg); }
+  50% { transform: translate(5px, 0) rotate(5deg); }
+  75% { transform: translate(-5px, 0) rotate(-5deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+@keyframes splashMove {
+  0% { transform: scale(1) translate(0, 0); opacity: 1; }
+  100% { transform: scale(1) translate(0,0)); opacity: 0; }
+}
+
+
+/* ========== MEDIA QUERIES (OPTIONAL) ========== */
+@media (max-width: 768px) {
+  #top-bar {
+    height: 50px;
+  }
+
+  #project-numbers {
+    display: none;
+  }
+
+  #main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .splash-icon {
+    font-size: 23em; /* Very big */
+  }
+  /* Adjust scroll container if needed */
+}
