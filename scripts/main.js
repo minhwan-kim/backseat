@@ -93,7 +93,7 @@
           overviewGrid.querySelectorAll("img").forEach(t => {
             t.style.opacity = (t.dataset.projectIndex === thumb.dataset.projectIndex) ? "1" : "0.2";
           });
-          overviewCaption.textContent = `${projects[pIndex].title} | ${projects[pIndex].date}`;
+          overviewCaption.textContent = `${projects[pIndex].title}`;
           overviewCaption.style.opacity = "1";
         });
         thumb.addEventListener("mouseleave", () => {

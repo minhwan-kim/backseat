@@ -359,5 +359,10 @@ html, body {
     color: rgba(56, 56, 56, 0.152);
   }
 
+  #overview-caption {
+    font-size: 4rem;
+    line-height: 4.8rem;
+  }
+
   /* Adjust scroll container if needed */
 }
