@@ -178,10 +178,19 @@ html, body {
   background-color: #fff;
 }
 .info-content {
-  max-width: 1000px;
+  max-width: 940px;
   text-align: left;
   padding-left: 1.2rem;
   padding-top: 10rem;
+  
+}
+#intro_car{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 50em;
+  padding-bottom: 30vh;
+  color: rgba(56, 56, 56, 0.152);
 }
 
 /* ========== OVERVIEW CONTAINER ========== */
@@ -329,5 +338,22 @@ html, body {
 
 
   }
+
+  .info-content {
+    max-width: 92%;
+    text-align: left;
+    padding-left: 1.2rem;
+    padding-top: 10rem;
+    
+  }
+  #intro_car{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 36em;
+    padding-bottom: 20vh;
+    color: rgba(56, 56, 56, 0.152);
+  }
+
   /* Adjust scroll container if needed */
 }

@@ -1,335 +1,381 @@
 [
   {
     "number": 1,
-    "title": "project_01",
-    "date": "",
+    "title": "Exhibition Design for MoMA. Vital Sign: Artists and the Body",
+    "date": "2024",
     "folder": "images/project_01",
     "thumb": "images/project_01/thumb.jpg",
     "images": [
       {
         "src": "images/project_01/Vital_Sign_0.jpg",
-        "caption": "project_01 - Vital_Sign_0.jpg"
+        "caption": "Exhibition Design for MoMA. Vital Sign: Artists and the Body"
       },
       {
         "src": "images/project_01/Vital_Sign_1.jpg",
-        "caption": "project_01 - Vital_Sign_1.jpg"
+        "caption": "Exhibition Design for MoMA. Vital Sign: Artists and the Body"
       },
       {
         "src": "images/project_01/Vital_Sign_2.jpg",
-        "caption": "project_01 - Vital_Sign_2.jpg"
+        "caption": "Exhibition Design for MoMA. Vital Sign: Artists and the Body"
       },
       {
         "src": "images/project_01/Vital_Sign_3.jpg",
-        "caption": "project_01 - Vital_Sign_3.jpg"
+        "caption": "Exhibition Design for MoMA. Vital Sign: Artists and the Body"
       },
       {
         "src": "images/project_01/Vital_Sign_4.jpg",
-        "caption": "project_01 - Vital_Sign_4.jpg"
+        "caption": "Exhibition Design for MoMA. Vital Sign: Artists and the Body"
       }
     ]
   },
   {
     "number": 2,
-    "title": "project_02",
-    "date": "",
+    "title": "MoMA Members",
+    "date": "2024",
     "folder": "images/project_02",
     "thumb": "images/project_02/thumb.jpg",
     "images": [
       {
-        "src": "images/project_02/Cruxgg_1010.png",
-        "caption": "project_02 - Cruxgg_1010.png"
+        "src": "images/project_02/MM_0.jpg",
+        "caption": "MoMA Members Rebranding Application Design"
       },
       {
-        "src": "images/project_02/GL02-–-TV-Mockup2.jpg",
-        "caption": "project_02 - GL02-–-TV-Mockup2.jpg"
-      },
-      {
-        "src": "images/project_02/image1.jpg",
-        "caption": "project_02 - image1.jpg"
-      },
-      {
-        "src": "images/project_02/image2.jpg",
-        "caption": "project_02 - image2.jpg"
+        "src": "images/project_02/MM_1.jpg",
+        "caption": "MoMA Members Rebranding Application Design"
       }
     ]
   },
   {
     "number": 3,
-    "title": "project_03",
-    "date": "",
+    "title": "Nike Future Movement",
+    "date": "2022",
     "folder": "images/project_03",
     "thumb": "images/project_03/thumb.jpg",
     "images": [
       {
-        "src": "images/project_03/IN2579_002_CCCR-Full size JPEG.jpg",
-        "caption": "project_03 - IN2579_002_CCCR-Full size JPEG.jpg"
+        "src": "images/project_03/Nike_FF_0.png",
+        "caption": "Nike, Future Movement Campaign"
       },
       {
-        "src": "images/project_03/IN2579_004_CCCR-Full size JPEG.jpg",
-        "caption": "project_03 - IN2579_004_CCCR-Full size JPEG.jpg"
+        "src": "images/project_03/Nike_FF_1_1.jpg",
+        "caption": "Nike, Future Movement Campaign"
       },
       {
-        "src": "images/project_03/image1.jpg",
-        "caption": "project_03 - image1.jpg"
+        "src": "images/project_03/Nike_FF_1_2.jpg",
+        "caption": "Nike, Future Movement Campaign"
       },
       {
-        "src": "images/project_03/image2.jpg",
-        "caption": "project_03 - image2.jpg"
+        "src": "images/project_03/Nike_FF_2.png",
+        "caption": "Nike, Future Movement Campaign"
+      },
+      {
+        "src": "images/project_03/Nike_FF_3.png",
+        "caption": "Nike, Future Movement Campaign"
       }
     ]
   },
   {
     "number": 4,
-    "title": "project_04",
-    "date": "",
+    "title": "MoMA Educational Material",
+    "date": "2024",
     "folder": "images/project_04",
     "thumb": "images/project_04/thumb.jpg",
     "images": [
       {
-        "src": "images/project_04/AAO_3.jpg",
-        "caption": "project_04 - AAO_3.jpg"
+        "src": "images/project_04/D75_0.jpg",
+        "caption": "MoMA, Identity-Based Learning through Art"
       },
       {
-        "src": "images/project_04/AAO_3_2.jpg",
-        "caption": "project_04 - AAO_3_2.jpg"
-      },
-      {
-        "src": "images/project_04/AAO_4.jpg",
-        "caption": "project_04 - AAO_4.jpg"
-      },
-      {
-        "src": "images/project_04/thesisbook.gif",
-        "caption": "project_04 - thesisbook.gif"
+        "src": "images/project_04/D75_1.jpg",
+        "caption": "MoMA, Identity-Based Learning through Art"
       }
     ]
   },
   {
     "number": 5,
-    "title": "project_05",
-    "date": "",
+    "title": "Open YY Rebranding",
+    "date": "2022",
     "folder": "images/project_05",
     "thumb": "images/project_05/thumb.jpg",
     "images": [
       {
-        "src": "images/project_05/Nike_Future_Movement_New_Studio_Brand_Identity_Design25.png",
-        "caption": "project_05 - Nike_Future_Movement_New_Studio_Brand_Identity_Design25.png"
+        "src": "images/project_05/OpenYY_0.jpg",
+        "caption": "Open YY Rebranding"
       },
       {
-        "src": "images/project_05/OTv1 Poster Mockup 012.png",
-        "caption": "project_05 - OTv1 Poster Mockup 012.png"
+        "src": "images/project_05/OpenYY_1.jpg",
+        "caption": "Open YY Rebranding"
       },
       {
-        "src": "images/project_05/gardening_01.jpg",
-        "caption": "project_05 - gardening_01.jpg"
+        "src": "images/project_05/OpenYY_2.jpg",
+        "caption": "Open YY Rebranding"
       },
       {
-        "src": "images/project_05/gardening_01_2.jpg",
-        "caption": "project_05 - gardening_01_2.jpg"
+        "src": "images/project_05/OpenYY_3.jpg",
+        "caption": "Open YY Rebranding"
       },
       {
-        "src": "images/project_05/gardening_03.jpg",
-        "caption": "project_05 - gardening_03.jpg"
-      },
-      {
-        "src": "images/project_05/gardening_04.jpg",
-        "caption": "project_05 - gardening_04.jpg"
-      },
-      {
-        "src": "images/project_05/gardening_05.jpg",
-        "caption": "project_05 - gardening_05.jpg"
-      },
-      {
-        "src": "images/project_05/gardening_06.jpg",
-        "caption": "project_05 - gardening_06.jpg"
-      },
-      {
-        "src": "images/project_05/gardening_07.jpg",
-        "caption": "project_05 - gardening_07.jpg"
-      },
-      {
-        "src": "images/project_05/gardening_08.jpg",
-        "caption": "project_05 - gardening_08.jpg"
+        "src": "images/project_05/OpenYY_4.jpg",
+        "caption": "Open YY Rebranding"
       }
     ]
   },
   {
     "number": 6,
-    "title": "project_06",
-    "date": "",
+    "title": "Verizon Design System",
+    "date": "2023",
     "folder": "images/project_06",
     "thumb": "images/project_06/thumb.jpg",
     "images": [
       {
-        "src": "images/project_06/image1.jpg",
-        "caption": "project_06 - image1.jpg"
+        "src": "images/project_06/VZ_01.gif",
+        "caption": "Verizon Retail Design System"
       },
       {
-        "src": "images/project_06/image2.jpg",
-        "caption": "project_06 - image2.jpg"
+        "src": "images/project_06/VZ_02.jpg",
+        "caption": "Verizon Retail Design System"
+      },
+      {
+        "src": "images/project_06/VZ_03.jpg",
+        "caption": "Verizon Retail Design System"
+      },
+      {
+        "src": "images/project_06/VZ_04.jpg",
+        "caption": "Verizon Retail Design System"
       }
-    ],
-    "cmsNumber": "06"
+    ]
   },
   {
     "number": 7,
-    "title": "project_07",
-    "date": "",
+    "title": "Verizon myPlan",
+    "date": "2022",
     "folder": "images/project_07",
     "thumb": "images/project_07/thumb.jpg",
     "images": [
       {
-        "src": "images/project_07/Bendito_Mockup-_CCC-T_Shirt-06.png",
-        "caption": "project_07 - Bendito_Mockup-_CCC-T_Shirt-06.png"
+        "src": "images/project_07/myplan_01.jpg",
+        "caption": "Verizon myPlan"
       },
       {
-        "src": "images/project_07/iPhone Mockup DS_001.png",
-        "caption": "project_07 - iPhone Mockup DS_001.png"
+        "src": "images/project_07/myplan_02.jpg",
+        "caption": "Verizon myPlan"
       },
       {
-        "src": "images/project_07/image1.jpg",
-        "caption": "project_07 - image1.jpg"
-      },
-      {
-        "src": "images/project_07/image2.jpg",
-        "caption": "project_07 - image2.jpg"
+        "src": "images/project_07/myplan_03.jpg",
+        "caption": "Verizon myPlan"
       }
     ]
   },
   {
     "number": 8,
-    "title": "project_08",
-    "date": "",
+    "title": "Verizon myPlan Discovery Tool",
+    "date": "2022",
     "folder": "images/project_08",
     "thumb": "images/project_08/thumb.jpg",
     "images": [
       {
-        "src": "images/project_08/The Poster Mockup 042.png",
-        "caption": "project_08 - The Poster Mockup 042.png"
+        "src": "images/project_08/myPlan_01.jpg",
+        "caption": "Verizon myPlan Discovery Tool"
       },
       {
-        "src": "images/project_08/image1.jpg",
-        "caption": "project_08 - image1.jpg"
+        "src": "images/project_08/myPlan_02_1.jpg",
+        "caption": "Verizon myPlan Discovery Tool"
       },
       {
-        "src": "images/project_08/image2.jpg",
-        "caption": "project_08 - image2.jpg"
+        "src": "images/project_08/myPlan_02_3.jpg",
+        "caption": "Verizon myPlan Discovery Tool"
+      },
+      {
+        "src": "images/project_08/myPlan_03.jpg",
+        "caption": "Verizon myPlan Discovery Tool"
+      },
+      {
+        "src": "images/project_08/myPlan_04.jpg",
+        "caption": "Verizon myPlan Discovery Tool"
       }
     ]
   },
   {
     "number": 9,
-    "title": "project_09",
-    "date": "",
+    "title": "Crux GG Website Design",
+    "date": "2022",
     "folder": "images/project_09",
     "thumb": "images/project_09/thumb.jpg",
     "images": [
       {
-        "src": "images/project_09/AAO_3.jpg",
-        "caption": "project_09 - AAO_3.jpg"
+        "src": "images/project_09/Cruxgg_1.jpg",
+        "caption": "Crux GG Website Design"
       },
       {
-        "src": "images/project_09/AAO_3_2.jpg",
-        "caption": "project_09 - AAO_3_2.jpg"
-      },
-      {
-        "src": "images/project_09/AAO_4.jpg",
-        "caption": "project_09 - AAO_4.jpg"
-      },
-      {
-        "src": "images/project_09/Herald Square Verizon Store 31st May 20237732_v1.jpg",
-        "caption": "project_09 - Herald Square Verizon Store 31st May 20237732_v1.jpg"
-      },
-      {
-        "src": "images/project_09/YP_3.gif",
-        "caption": "project_09 - YP_3.gif"
+        "src": "images/project_09/Cruxgg_2.jpg",
+        "caption": "Crux GG Website Design"
       }
     ]
   },
   {
     "number": 10,
-    "title": "project_10",
-    "date": "",
+    "title": "Verizon Retail 3.0",
+    "date": "2021",
     "folder": "images/project_10",
     "thumb": "images/project_10/thumb.jpg",
     "images": [
       {
-        "src": "images/project_10/gardening_01.jpg",
-        "caption": "project_10 - gardening_01.jpg"
+        "src": "images/project_10/Retail3_0.jpg",
+        "caption": "Verizon Retail 3.0 Proposal"
       },
       {
-        "src": "images/project_10/gardening_01_2.jpg",
-        "caption": "project_10 - gardening_01_2.jpg"
+        "src": "images/project_10/Retail3_1.jpg",
+        "caption": "Verizon Retail 3.0 Proposal"
       },
       {
-        "src": "images/project_10/gardening_03.jpg",
-        "caption": "project_10 - gardening_03.jpg"
+        "src": "images/project_10/Retail3_2.jpg",
+        "caption": "Verizon Retail 3.0 Proposal"
       },
       {
-        "src": "images/project_10/gardening_04.jpg",
-        "caption": "project_10 - gardening_04.jpg"
-      },
-      {
-        "src": "images/project_10/gardening_05.jpg",
-        "caption": "project_10 - gardening_05.jpg"
-      },
-      {
-        "src": "images/project_10/gardening_06.jpg",
-        "caption": "project_10 - gardening_06.jpg"
-      },
-      {
-        "src": "images/project_10/gardening_07.jpg",
-        "caption": "project_10 - gardening_07.jpg"
-      },
-      {
-        "src": "images/project_10/gardening_08.jpg",
-        "caption": "project_10 - gardening_08.jpg"
+        "src": "images/project_10/Retail3_3.jpg",
+        "caption": "Verizon Retail 3.0 Proposal"
       }
-    ],
-    "cmsNumber": "10"
+    ]
   },
   {
     "number": 11,
-    "title": "project_11",
-    "date": "",
+    "title": "Verizon Rebranding",
+    "date": "2024–ongoing",
     "folder": "images/project_11",
     "thumb": "images/project_11/thumb.jpg",
     "images": [
       {
-        "src": "images/project_11/72-2.png",
-        "caption": "project_11 - 72-2.png"
+        "src": "images/project_11/Monarch_1.jpg",
+        "caption": "Verizon Rebranding"
       },
       {
-        "src": "images/project_11/72.png",
-        "caption": "project_11 - 72.png"
-      },
-      {
-        "src": "images/project_11/image1.jpg",
-        "caption": "project_11 - image1.jpg"
-      },
-      {
-        "src": "images/project_11/image2.jpg",
-        "caption": "project_11 - image2.jpg"
-      },
-      {
-        "src": "images/project_11/render1_223.jpg",
-        "caption": "project_11 - render1_223.jpg"
+        "src": "images/project_11/Monarch_2.jpg",
+        "caption": "Verizon Rebranding"
       }
     ]
   },
   {
     "number": 12,
-    "title": "project_12",
-    "date": "",
+    "title": "A24 Minari Screenplay book",
+    "date": "2022",
     "folder": "images/project_12",
     "thumb": "images/project_12/thumb.jpg",
     "images": [
       {
-        "src": "images/project_12/The Poster Mockup 042.png",
-        "caption": "project_12 - The Poster Mockup 042.png"
+        "src": "images/project_12/Minari0_low.jpg",
+        "caption": "A24 Minari Screenplay book"
       },
       {
-        "src": "images/project_12/The Poster Mockup 0422.jpg",
-        "caption": "project_12 - The Poster Mockup 0422.jpg"
+        "src": "images/project_12/Minari1.jpg",
+        "caption": "A24 Minari Screenplay book"
+      },
+      {
+        "src": "images/project_12/Minari2.jpg",
+        "caption": "A24 Minari Screenplay book"
+      },
+      {
+        "src": "images/project_12/Minari3.jpg",
+        "caption": "A24 Minari Screenplay book"
+      },
+      {
+        "src": "images/project_12/Minari5.jpg",
+        "caption": "A24 Minari Screenplay book"
+      }
+    ]
+  },
+  {
+    "number": 13,
+    "title": "Image RIP:After Printing, Work & Planet Earth",
+    "date": "2023",
+    "folder": "images/project_13",
+    "thumb": "images/project_13/thumb.jpg",
+    "images": [
+      {
+        "src": "images/project_13/ImageRIP_0.jpg",
+        "caption": "Image RIP:After Printing, Work & Planet Earth"
+      },
+      {
+        "src": "images/project_13/ImageRIP_1.jpg",
+        "caption": "Image RIP:After Printing, Work & Planet Earth"
+      },
+      {
+        "src": "images/project_13/ImageRIP_2.jpg",
+        "caption": "Image RIP:After Printing, Work & Planet Earth"
+      },
+      {
+        "src": "images/project_13/ImageRIP_3.jpg",
+        "caption": "Image RIP:After Printing, Work & Planet Earth"
+      }
+    ]
+  },
+  {
+    "number": 14,
+    "title": "Negotiating Ungers",
+    "date": "2022",
+    "folder": "images/project_14",
+    "thumb": "images/project_14/thumb.jpg",
+    "images": [
+      {
+        "src": "images/project_14/Ungers_0.jpg",
+        "caption": "Negotiating Ungers"
+      },
+      {
+        "src": "images/project_14/Ungers_1.jpg",
+        "caption": "Negotiating Ungers"
+      },
+      {
+        "src": "images/project_14/Ungers_2_bg.jpg",
+        "caption": "Negotiating Ungers"
+      }
+    ]
+  },
+  {
+    "number": 15,
+    "title": "Exhibition Design for Farshad Farzankia, Ten Thousand Eyes",
+    "date": "2022",
+    "folder": "images/project_15",
+    "thumb": "images/project_15/thumb.jpg",
+    "images": [
+      {
+        "src": "images/project_15/FF_0.jpg",
+        "caption": "Exhibition Design for Farshad Farzankia, Ten Thousand Eyes"
+      },
+      {
+        "src": "images/project_15/FF_1.jpg",
+        "caption": "Exhibition Design for Farshad Farzankia, Ten Thousand Eyes"
+      },
+      {
+        "src": "images/project_15/FF_2.jpg",
+        "caption": "Exhibition Design for Farshad Farzankia, Ten Thousand Eyes"
+      },
+      {
+        "src": "images/project_15/FF_3.jpg",
+        "caption": "Exhibition Design for Farshad Farzankia, Ten Thousand Eyes"
+      },
+      {
+        "src": "images/project_15/FF_4.jpg",
+        "caption": "Exhibition Design for Farshad Farzankia, Ten Thousand Eyes"
+      },
+      {
+        "src": "images/project_15/FF_5.jpg",
+        "caption": "Exhibition Design for Farshad Farzankia, Ten Thousand Eyes"
+      }
+    ]
+  },
+  {
+    "number": 16,
+    "title": "Identity Desing for Artist collective 'Friend of a Friend'",
+    "date": "2022",
+    "folder": "images/project_16",
+    "thumb": "images/project_16/thumb.jpg",
+    "images": [
+      {
+        "src": "images/project_16/fof_1.jpg",
+        "caption": "Identity Desing for Artist collective 'Friend of a Friend"
+      },
+      {
+        "src": "images/project_16/fof_2.jpg",
+        "caption": "Identity Desing for Artist collective 'Friend of a Friend"
       }
     ]
   }
