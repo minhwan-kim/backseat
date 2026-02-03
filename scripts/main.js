@@ -317,7 +317,7 @@
 
   /* ABOUT LINK */
   aboutLink.addEventListener("click", () => {
-    alert("Frontseat Strategies is a full-service design agency.\nOur services are invite-only.");
+    alert("Frontseat Strategies is a full-service design agency that bridges strategic thinking with expressive visual forms. \n \nWe partner with brands, cultural organizations, and institutions to create meaningful identities, engaging digital experiences, thoughtful publications, and memorable spatial environments.\n  \nOur services are invite-only.");
   });
 
   /* BUILD PROJECT NAVIGATOR */
