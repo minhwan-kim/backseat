@@ -5,6 +5,12 @@
   let currentDetailImageIndex = 0;
   let isAnimating = false;
 
+  /* TOUCH SWIPE VARIABLES */
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let touchEndX = 0;
+  let touchEndY = 0;
+
   /* DOM ELEMENTS */
   const verticalCarousel = document.getElementById("vertical-carousel");
   const detailView = document.getElementById("detail-view");
@@ -100,11 +106,49 @@
           img.alt = imageData.caption || project.title;
           img.dataset.index = index;
 
+          // Add mousemove handler for cursor change
+          img.addEventListener('mousemove', (e) => {
+            const imgIndex = parseInt(e.target.dataset.index);
+
+            // If not the current image, show pointer cursor
+            if (imgIndex !== currentDetailImageIndex) {
+              e.target.style.cursor = 'pointer';
+              return;
+            }
+
+            // For current image, check left/right half
+            const rect = e.target.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const width = rect.width;
+            const isLeftHalf = x < width / 2;
+
+            if (isLeftHalf && currentDetailImageIndex > 0) {
+              e.target.style.cursor = 'w-resize'; // Left arrow cursor
+            } else if (!isLeftHalf && currentDetailImageIndex < project.images.length - 1) {
+              e.target.style.cursor = 'e-resize'; // Right arrow cursor
+            } else {
+              e.target.style.cursor = 'default';
+            }
+          });
+
           // Add click handler to navigate
           img.addEventListener('click', (e) => {
             e.stopPropagation();
             const clickedIndex = parseInt(e.target.dataset.index);
-            if (clickedIndex > currentDetailImageIndex) {
+
+            // If clicking on current image, check left/right half
+            if (clickedIndex === currentDetailImageIndex) {
+              const rect = e.target.getBoundingClientRect();
+              const x = e.clientX - rect.left;
+              const width = rect.width;
+              const isLeftHalf = x < width / 2;
+
+              if (isLeftHalf && currentDetailImageIndex > 0) {
+                showPreviousDetailImage();
+              } else if (!isLeftHalf && currentDetailImageIndex < project.images.length - 1) {
+                showNextDetailImage();
+              }
+            } else if (clickedIndex > currentDetailImageIndex) {
               showNextDetailImage();
             } else if (clickedIndex < currentDetailImageIndex) {
               showPreviousDetailImage();
@@ -226,6 +270,37 @@
   /* EVENT LISTENERS */
   closeDetailBtn.addEventListener("click", closeDetailView);
   detailOverlay.addEventListener("click", closeDetailView);
+
+  /* TOUCH SWIPE HANDLERS FOR DETAIL VIEW */
+  const detailCarousel = document.getElementById('detail-carousel');
+
+  detailCarousel.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+  }, { passive: true });
+
+  detailCarousel.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    touchEndY = e.changedTouches[0].screenY;
+    handleSwipe();
+  }, { passive: true });
+
+  function handleSwipe() {
+    const deltaX = touchEndX - touchStartX;
+    const deltaY = touchEndY - touchStartY;
+    const minSwipeDistance = 50; // Minimum swipe distance in pixels
+
+    // Check if horizontal swipe is dominant and exceeds minimum distance
+    if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > minSwipeDistance) {
+      if (deltaX < 0) {
+        // Swipe left -> next image
+        showNextDetailImage();
+      } else {
+        // Swipe right -> previous image
+        showPreviousDetailImage();
+      }
+    }
+  }
 
   /* KEYBOARD NAVIGATION */
   document.addEventListener("keydown", (e) => {
