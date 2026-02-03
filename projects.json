@@ -53,10 +53,6 @@
     "thumb": "images/project_03/thumb.jpg",
     "images": [
       {
-        "src": "images/project_03/Nike_FF_0.png",
-        "caption": "Nike, Future Movement Campaign"
-      },
-      {
         "src": "images/project_03/Nike_FF_1_1.jpg",
         "caption": "Nike, Future Movement Campaign"
       },
@@ -82,11 +78,11 @@
     "thumb": "images/project_04/thumb.jpg",
     "images": [
       {
-        "src": "images/project_04/D75_0.jpg",
+        "src": "images/project_04/D75_1.jpg",
         "caption": "MoMA, Identity-Based Learning through Art"
       },
       {
-        "src": "images/project_04/D75_1.jpg",
+        "src": "images/project_04/D75_2.jpg",
         "caption": "MoMA, Identity-Based Learning through Art"
       }
     ]
@@ -153,15 +149,15 @@
     "thumb": "images/project_07/thumb.jpg",
     "images": [
       {
+        "src": "images/project_07/myplan_00.jpg",
+        "caption": "Verizon myPlan"
+      },
+      {
         "src": "images/project_07/myplan_01.jpg",
         "caption": "Verizon myPlan"
       },
       {
         "src": "images/project_07/myplan_02.jpg",
-        "caption": "Verizon myPlan"
-      },
-      {
-        "src": "images/project_07/myplan_03.jpg",
         "caption": "Verizon myPlan"
       }
     ]
@@ -291,6 +287,10 @@
     "thumb": "images/project_13/thumb.jpg",
     "images": [
       {
+        "src": "images/project_13/ImageRIP_0 copy.jpg",
+        "caption": "Image RIP:After Printing, Work & Planet Earth"
+      },
+      {
         "src": "images/project_13/ImageRIP_0.jpg",
         "caption": "Image RIP:After Printing, Work & Planet Earth"
       },
@@ -364,18 +364,18 @@
   },
   {
     "number": 16,
-    "title": "Identity Desing for Artist collective 'Friend of a Friend'",
+    "title": "Identity Design for Artist Collective 'Friend of a Friend'",
     "date": "2022",
     "folder": "images/project_16",
     "thumb": "images/project_16/thumb.jpg",
     "images": [
       {
         "src": "images/project_16/fof_1.jpg",
-        "caption": "Identity Desing for Artist collective 'Friend of a Friend"
+        "caption": "Identity Design for Artist Collective 'Friend of a Friend'"
       },
       {
         "src": "images/project_16/fof_2.jpg",
-        "caption": "Identity Desing for Artist collective 'Friend of a Friend"
+        "caption": "Identity Design for Artist Collective 'Friend of a Friend'"
       }
     ]
   }

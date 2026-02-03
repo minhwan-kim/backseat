@@ -1,247 +1,310 @@
 (() => {
   /* GLOBAL VARIABLES */
   let projects = [];
-  let currentProjectIndex = 0;
-  let currentImageIndex = 0;
-  let infoVisible = false; // tracks if info section is visible
+  let currentDetailProject = null;
+  let currentDetailImageIndex = 0;
+  let isAnimating = false;
 
   /* DOM ELEMENTS */
-  const projectNumbersContainer = document.getElementById("project-numbers");
-  const hoverThumb = document.getElementById("project-hover-thumbnail");
-  const mainImage = document.getElementById("main-image");
-  const imageCaption = document.getElementById("image-caption");
-  const fullscreenContainer = document.getElementById("fullscreen-container");
-  const overviewContainer = document.getElementById("overview-container");
-  const overviewGrid = document.getElementById("overview-grid");
-  const studioToggle = document.getElementById("studio-toggle"); // Upper-left: Studio MHK / Back
-  const viewToggle = document.getElementById("view-toggle");     // Upper-right: (View All) / (Back)
-  const scrollContainer = document.getElementById("scroll-container");
-  const overviewCaption = document.getElementById("overview-caption");
+  const verticalCarousel = document.getElementById("vertical-carousel");
+  const detailView = document.getElementById("detail-view");
+  const detailOverlay = document.getElementById("detail-overlay");
+  const closeDetailBtn = document.getElementById("close-detail");
+  const detailCaption = document.getElementById("detail-caption");
+  const aboutLink = document.getElementById("about-link");
+  const projectNavigator = document.getElementById("project-navigator");
 
   /* FETCH PROJECTS.JSON */
   fetch("projects.json")
     .then(res => res.json())
     .then(data => {
       projects = data;
-      buildProjectNumbers();
-      buildOverviewGrid();
-      if (projects.length && projects[0].images?.length) {
-        showImage(0, 0);
-      }
+      buildVerticalCarousel();
     })
     .catch(err => console.error("Error loading projects.json:", err));
 
-  /* Prevent default behaviors */
-  document.addEventListener("contextmenu", e => e.preventDefault());
-  let lastTouchEnd = 0;
-  document.addEventListener("touchend", e => {
-    const now = Date.now();
-    if (now - lastTouchEnd <= 300) e.preventDefault();
-    lastTouchEnd = now;
-  }, false);
-  fullscreenContainer.addEventListener("dblclick", e => e.preventDefault());
+  /* BUILD VERTICAL CAROUSEL */
+  function buildVerticalCarousel() {
+    verticalCarousel.innerHTML = "";
+    const fragment = document.createDocumentFragment();
 
-  /* Change mouse cursor based on horizontal position */
-  fullscreenContainer.addEventListener("mousemove", e => {
-    const containerWidth = fullscreenContainer.offsetWidth;
-    fullscreenContainer.style.cursor = (e.clientX < containerWidth / 2) ? "w-resize" : "e-resize";
-  });
+    // Add intro card
+    const introCard = document.createElement("div");
+    introCard.className = "project-card intro-card";
+    introCard.innerHTML = `
+      <div class="intro-text">
+        <div class="intro-scroll">
+        FRONTSEAT STRATEGIES IS A FULL-SERVICE DESIGN AGENCY.
+        <br>
+          SCROLL DOWN TO VIEW OUR PROJECTS
+        </div>
+      </div>
+    `;
+    fragment.appendChild(introCard);
 
-  /* BUILD PROJECT NUMBERS using DocumentFragment */
-  function buildProjectNumbers() {
-    projectNumbersContainer.innerHTML = "";
-    const frag = document.createDocumentFragment();
+    // Add project cards
     projects.forEach((project, index) => {
-      const span = document.createElement("span");
-      span.className = "project-number";
-      span.dataset.projectIndex = index;
-      span.textContent = project.number;
-      span.addEventListener("mouseover", () => {
-        hoverThumb.src = project.thumb;
-        hoverThumb.style.display = "block";
-      });
-      span.addEventListener("mousemove", e => {
-        hoverThumb.style.top = `${e.pageY + 20}px`;
-        hoverThumb.style.left = `${e.pageX + 20}px`;
-      });
-      span.addEventListener("mouseout", () => {
-        hoverThumb.style.display = "none";
-      });
-      span.addEventListener("click", () => showImage(index, 0));
-      frag.appendChild(span);
+      if (!project.images || project.images.length === 0) return;
+
+      const card = document.createElement("div");
+      card.className = "project-card";
+      card.dataset.projectIndex = index;
+
+      const img = document.createElement("img");
+      img.src = project.images[0].src;
+      img.alt = project.title;
+      img.loading = index > 2 ? "lazy" : "eager";
+
+      const title = document.createElement("div");
+      title.className = "project-title";
+      title.textContent = project.title;
+
+      card.appendChild(img);
+      card.appendChild(title);
+      card.addEventListener("click", () => openDetailView(index));
+
+      fragment.appendChild(card);
     });
-    projectNumbersContainer.appendChild(frag);
+
+    verticalCarousel.appendChild(fragment);
+
+    // Build project navigator after carousel is built
+    buildProjectNavigator();
   }
 
-  /* BUILD OVERVIEW GRID - Continuous grid of all thumbnails */
-  function buildOverviewGrid() {
-    overviewGrid.innerHTML = "";
-    const frag = document.createDocumentFragment();
-    projects.forEach((project, pIndex) => {
-      project.images.forEach((imgData, iIndex) => {
-        const thumb = document.createElement("img");
-        thumb.src = imgData.src;
-        thumb.alt = imgData.caption || "Project Image";
-        thumb.loading = "lazy";
-        thumb.dataset.projectIndex = pIndex;
-        thumb.dataset.imageIndex = iIndex;
-        thumb.addEventListener("click", () => {
-          exitOverviewMode();
-          showImage(pIndex, iIndex);
-        });
-        thumb.addEventListener("mouseenter", () => {
-          overviewGrid.querySelectorAll("img").forEach(t => {
-            t.style.opacity = (t.dataset.projectIndex === thumb.dataset.projectIndex) ? "1" : "0.2";
+  /* OPEN DETAIL VIEW */
+  function openDetailView(projectIndex) {
+    currentDetailProject = projectIndex;
+    currentDetailImageIndex = 0;
+
+    // Find the clicked project card
+    const clickedCard = document.querySelector(`.project-card[data-project-index="${projectIndex}"]`);
+
+    if (clickedCard) {
+      // Scroll the card to center of viewport
+      clickedCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      // Wait for scroll animation to complete, then open detail view
+      setTimeout(() => {
+        const project = projects[currentDetailProject];
+        const carousel = document.getElementById('detail-carousel');
+
+        // Clear carousel
+        carousel.innerHTML = '';
+
+        // Create all image elements
+        project.images.forEach((imageData, index) => {
+          const img = document.createElement('img');
+          img.className = 'detail-carousel-image';
+          img.src = imageData.src;
+          img.alt = imageData.caption || project.title;
+          img.dataset.index = index;
+
+          // Add click handler to navigate
+          img.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const clickedIndex = parseInt(e.target.dataset.index);
+            if (clickedIndex > currentDetailImageIndex) {
+              showNextDetailImage();
+            } else if (clickedIndex < currentDetailImageIndex) {
+              showPreviousDetailImage();
+            }
           });
-          overviewCaption.textContent = `${projects[pIndex].title}`;
-          overviewCaption.style.opacity = "1";
+
+          carousel.appendChild(img);
         });
-        thumb.addEventListener("mouseleave", () => {
-          overviewGrid.querySelectorAll("img").forEach(t => t.style.opacity = "1");
-          overviewCaption.style.opacity = "0";
+
+        // Position carousel to center first image
+        // Center offset = (100vw - 80vw) / 2 = 10vw
+        carousel.style.transition = 'none';
+        carousel.style.transform = 'translateX(10vw)';
+
+        // Update caption
+        updateCaption();
+
+        // Hide about link and project navigator
+        aboutLink.style.opacity = '0';
+        aboutLink.style.pointerEvents = 'none';
+        projectNavigator.style.opacity = '0';
+        projectNavigator.style.pointerEvents = 'none';
+
+        // Show detail view with transition
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            detailView.classList.add("active");
+            document.body.style.overflow = "hidden";
+            // Re-enable carousel transitions
+            setTimeout(() => {
+              carousel.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+            }, 50);
+          });
         });
-        frag.appendChild(thumb);
-      });
-    });
-    overviewGrid.appendChild(frag);
-  }
-
-  /* Utility: Format caption so that only uppercase letters get a random color */
-  function formatCaption(caption) {
-    const palette = ["rgb(200, 255, 0)", "rgb(247, 57, 19)", "rgb(19, 133, 247)", "rgb(255, 251, 0)"];
-    return caption.replace(/[A-Z]/g, letter => {
-      const randomColor = palette[Math.floor(Math.random() * palette.length)];
-      return `<span style="color: ${randomColor};">${letter}</span>`;
-    });
-  }
-
-  /* SHOW A SPECIFIC IMAGE */
-  function showImage(projectIndex, imageIndex) {
-    currentProjectIndex = projectIndex;
-    currentImageIndex = imageIndex;
-    const project = projects[projectIndex];
-    if (!project) return;
-    const imageData = project.images[imageIndex];
-    if (!imageData) return;
-    mainImage.src = imageData.src;
-    // Process caption: only wrap uppercase letters
-    imageCaption.innerHTML = formatCaption(imageData.caption || "");
-    updateProjectNumberHighlight();
-  }
-
-  /* HIGHLIGHT CURRENT PROJECT NUMBER - Persistent random color */
-  function updateProjectNumberHighlight() {
-    document.querySelectorAll(".project-number").forEach(num => num.classList.remove("active"));
-    const active = document.querySelector(`.project-number[data-project-index="${currentProjectIndex}"]`);
-    if (active) {
-      active.classList.add("active");
-      const palette = ["rgb(254, 254, 254)"];
-      if (!active.dataset.activeColor) {
-        active.dataset.activeColor = palette[Math.floor(Math.random() * palette.length)];
-      }
-      active.style.color = active.dataset.activeColor;
-
+      }, 500);
     }
   }
 
-  /* Navigation: left/right click */
-  fullscreenContainer.addEventListener("click", e => {
-    const containerWidth = fullscreenContainer.offsetWidth;
-    e.clientX < containerWidth / 2 ? showPreviousImage() : showNextImage();
-  });
+  /* CLOSE DETAIL VIEW */
+  function closeDetailView() {
+    detailView.classList.remove("active");
 
-  function showNextImage() {
-    let projIndex = currentProjectIndex;
-    let imgIndex = currentImageIndex + 1;
-    if (imgIndex >= projects[projIndex].images.length) {
-      imgIndex = 0;
-      projIndex = (projIndex + 1) % projects.length;
-    }
-    showImage(projIndex, imgIndex);
+    // Show about link and project navigator
+    aboutLink.style.opacity = '';
+    aboutLink.style.pointerEvents = '';
+    projectNavigator.style.opacity = '';
+    projectNavigator.style.pointerEvents = '';
+
+    // Wait for transition to complete before resetting
+    setTimeout(() => {
+      document.body.style.overflow = "";
+      currentDetailProject = null;
+      currentDetailImageIndex = 0;
+      isAnimating = false;
+
+      // Reset carousel
+      const carousel = document.getElementById('detail-carousel');
+      carousel.innerHTML = '';
+      carousel.style.transition = 'none';
+      carousel.style.transform = 'translateX(10vw)';
+    }, 600);
   }
 
-  function showPreviousImage() {
-    let projIndex = currentProjectIndex;
-    let imgIndex = currentImageIndex - 1;
-    if (imgIndex < 0) {
-      projIndex = (projIndex - 1 + projects.length) % projects.length;
-      imgIndex = projects[projIndex].images.length - 1;
-    }
-    showImage(projIndex, imgIndex);
+  /* UPDATE CAPTION */
+  function updateCaption() {
+    if (currentDetailProject === null) return;
+
+    const project = projects[currentDetailProject];
+    const currentImageData = project.images[currentDetailImageIndex];
+    detailCaption.textContent = currentImageData.caption || project.title;
   }
 
-  /* Touch swipe for mobile */
-  let touchStartX = 0;
-  fullscreenContainer.addEventListener("touchstart", e => {
-    touchStartX = e.touches[0].clientX;
-  });
-  fullscreenContainer.addEventListener("touchend", e => {
-    const diff = e.changedTouches[0].clientX - touchStartX;
-    diff > 50 ? showPreviousImage() : diff < -50 && showNextImage();
-  });
+  /* NAVIGATE DETAIL VIEW */
+  function showNextDetailImage() {
+    if (currentDetailProject === null || isAnimating) return;
 
-  /* KEYBOARD NAVIGATION: left/right arrow keys */
-  document.addEventListener("keydown", e => {
-    if (e.key === "ArrowRight") {
-      showNextImage();
+    const project = projects[currentDetailProject];
+    if (currentDetailImageIndex >= project.images.length - 1) return; // At last image
+
+    isAnimating = true;
+    currentDetailImageIndex++;
+
+    const carousel = document.getElementById('detail-carousel');
+    const slideDistance = 82; // 80vw + 2rem gap
+    const centerOffset = 10; // (100vw - 80vw) / 2
+    const offset = centerOffset - (currentDetailImageIndex * slideDistance);
+
+    carousel.style.transform = `translateX(${offset}vw)`;
+    updateCaption();
+
+    // Reset animation flag after transition
+    setTimeout(() => {
+      isAnimating = false;
+    }, 500);
+  }
+
+  function showPreviousDetailImage() {
+    if (currentDetailProject === null || isAnimating) return;
+
+    if (currentDetailImageIndex <= 0) return; // At first image
+
+    isAnimating = true;
+    currentDetailImageIndex--;
+
+    const carousel = document.getElementById('detail-carousel');
+    const slideDistance = 82; // 80vw + 2rem gap
+    const centerOffset = 10; // (100vw - 80vw) / 2
+    const offset = centerOffset - (currentDetailImageIndex * slideDistance);
+
+    carousel.style.transform = `translateX(${offset}vw)`;
+    updateCaption();
+
+    // Reset animation flag after transition
+    setTimeout(() => {
+      isAnimating = false;
+    }, 500);
+  }
+
+  /* EVENT LISTENERS */
+  closeDetailBtn.addEventListener("click", closeDetailView);
+  detailOverlay.addEventListener("click", closeDetailView);
+
+  /* KEYBOARD NAVIGATION */
+  document.addEventListener("keydown", (e) => {
+    if (!detailView.classList.contains("active")) return;
+
+    if (e.key === "Escape") {
+      closeDetailView();
+    } else if (e.key === "ArrowRight") {
+      showNextDetailImage();
     } else if (e.key === "ArrowLeft") {
-      showPreviousImage();
+      showPreviousDetailImage();
     }
   });
 
-  /* TOGGLE OVERVIEW MODE via viewToggle (upper-right) */
-  viewToggle.addEventListener("click", () => {
-    if (!overviewContainer.classList.contains("active")) {
-      overviewContainer.classList.add("active");
-      viewToggle.textContent = "(Back)";
-      viewToggle.classList.add("back");
-      // Hide Studio MHK and project numbers during overview mode
-      studioToggle.style.display = "none";
-      projectNumbersContainer.style.display = "none";
-    } else {
-      exitOverviewMode();
-    }
+  /* ABOUT LINK */
+  aboutLink.addEventListener("click", () => {
+    alert("Frontseat Strategies is a full-service design agency.\nOur services are invite-only.");
   });
 
-  function exitOverviewMode() {
-    overviewContainer.classList.remove("active");
-    viewToggle.textContent = "(View All)";
-    viewToggle.classList.remove("back");
-    // Restore Studio MHK and project numbers
-    studioToggle.style.display = "";
-    projectNumbersContainer.style.display = "";
+  /* BUILD PROJECT NAVIGATOR */
+  function buildProjectNavigator() {
+    projectNavigator.innerHTML = "";
+
+    projects.forEach((_, index) => {
+      const navItem = document.createElement("div");
+      navItem.className = "project-nav-item";
+      navItem.textContent = index + 1;
+      navItem.dataset.projectIndex = index;
+
+      navItem.addEventListener("click", () => {
+        const targetCard = document.querySelector(`.project-card[data-project-index="${index}"]`);
+        if (targetCard) {
+          targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      });
+
+      projectNavigator.appendChild(navItem);
+    });
+
+    // Setup IntersectionObserver for automatic navigation
+    setupNavigatorObserver();
   }
 
-  /* TOGGLE INFO SECTION via studioToggle (upper-left) using scroll animation */
-  studioToggle.addEventListener("click", () => {
-    if (!infoVisible) {
-      scrollContainer.style.transform = "translateY(-100vh)";
-      // When info section is active, remove the icon (just show text "Back")
-      studioToggle.textContent = "Back";
-      studioToggle.style.color = "#000"; // Force Back to be black
-      studioToggle.classList.add("back");
-      infoVisible = true;
-      // Hide viewToggle and project numbers while in info mode
-      viewToggle.style.display = "none";
-      projectNumbersContainer.style.display = "none";
-    } else {
-      scrollContainer.style.transform = "translateY(0)";
-      studioToggle.innerHTML = '<span class="studio-icon">⛐</span> Backseat Studio';
-      studioToggle.classList.remove("back");
-      studioToggle.style.color = "";
-      infoVisible = false;
-      viewToggle.style.display = "";
-      projectNumbersContainer.style.display = "";
-    }
-  });
+  /* SETUP INTERSECTION OBSERVER FOR NAVIGATOR */
+  function setupNavigatorObserver() {
+    // Observer options: detect when project card is in the center of viewport
+    const options = {
+      root: null,
+      rootMargin: '-45% 0px -45% 0px', // Only trigger when in center 10% of viewport
+      threshold: 0
+    };
 
-  /* SPLASH ANIMATION REMOVAL */
-  const splash = document.getElementById("splash");
-  if (splash) {
-    splash.addEventListener("animationend", e => {
-      if (e.animationName === "splashMove") {
-        splash.remove();
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const projectIndex = parseInt(entry.target.dataset.projectIndex);
+          updateActiveNavigator(projectIndex);
+        }
+      });
+    }, options);
+
+    // Observe all project cards
+    const projectCards = document.querySelectorAll('.project-card[data-project-index]');
+    projectCards.forEach(card => observer.observe(card));
+  }
+
+  /* UPDATE ACTIVE NAVIGATOR */
+  function updateActiveNavigator(activeIndex) {
+    const navItems = document.querySelectorAll('.project-nav-item');
+    navItems.forEach((item) => {
+      const itemIndex = parseInt(item.dataset.projectIndex);
+      if (itemIndex === activeIndex) {
+        item.classList.add('active');
+      } else {
+        item.classList.remove('active');
       }
     });
   }
+
+  /* PREVENT DEFAULT BEHAVIORS */
+  document.addEventListener("contextmenu", e => e.preventDefault());
 })();

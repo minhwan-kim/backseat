@@ -1,0 +1,9 @@
+{
+  "title": "Project Title Here",
+  "date": "2025",
+  "defaultCaption": "Default caption for all images",
+  "captions": {
+    "image1.jpg": "Custom caption for image1.jpg",
+    "image2.jpg": "Custom caption for image2.jpg"
+  }
+}

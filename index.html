@@ -3,14 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Backseat Studio</title>
+  <title>FRONTSEAT STRATEGIES</title>
   <link rel="stylesheet" href="styles/main.css" />
 </head>
 <body>
-  <div id="splash">
-    <span class="splash-icon">⛐</span>
-  </div>
-  
+  <!-- LOGO IMAGES -->
+  <img id="logo-fs" src="images/Global/FS.png" alt="FS Logo" />
+  <img id="logo-st" src="images/Global/ST.png" alt="ST Logo" />
+
+  <!-- ABOUT LINK -->
+  <img id="about-link" src="images/Global/About.png" alt="About" />
+
+  <!-- PROJECT NAVIGATOR -->
+  <div id="project-navigator"></div>
 
   <!-- TOP BAR (overlayed on top of the images) -->
   <header id="top-bar">
@@ -24,50 +29,22 @@
     <div id="view-toggle">(View All)</div>
   </header>
 
-  <!-- SCROLL CONTAINER: holds two full-viewport sections -->
-  <div id="scroll-container">
-    <!-- Section 1: Slideshow -->
-    <section id="slideshow-section">
-      <main id="fullscreen-container">
-        <div id="image-wrapper">
-          <img id="main-image" src="" alt="Current Project Image" />
-        </div>
-        <div id="caption-bar">
-          <p id="image-caption"></p>
-        </div>
-      </main>
-    </section>
-    <!-- Section 2: Info Section -->
-    <section id="info-section">
-      <div class="info-content">
-        <p>Backseat Studio is a multidisciplinary design practice that bridges strategic thinking with expressive visual forms. We partner with brands, cultural organizations, and institutions to create meaningful identities, engaging digital experiences, thoughtful publications, and memorable spatial environments.
-<br><br>
-          Our approach goes beyond simply delivering finished visuals. By deeply understanding our clients’ objectives, missions, and stories, we develop strategic frameworks that seamlessly translate into compelling design. We believe great design emerges from thoughtful collaboration, purposeful strategy, and a genuine curiosity for how visual culture shapes our understanding of the world.
-          <br><br>
-          At Backseat, we’re not interested in superficial solutions or passing trends. Instead, we’re focused on building enduring relationships through design that is both strategically sound and visually captivating—creating work that connects deeply and authentically with people.
-          <br><br>
-          <span id="intro_car">⛐</span>
-          
-          
-          
-          
-          
-          
-          </p>      </div>
-    </section>
+  <!-- VERTICAL CAROUSEL: Main portfolio view -->
+  <div id="vertical-carousel">
+    <!-- Project cards will be inserted dynamically -->
   </div>
 
-  <!-- OVERVIEW CONTAINER (for grid mode) -->
-  <section id="overview-container">
-    <div id="overview-grid">
-      <!-- Thumbnails inserted dynamically -->
+  <!-- DETAIL VIEW: Opens when clicking a project -->
+  <div id="detail-view">
+    <div id="detail-overlay"></div>
+    <button id="close-detail">✕</button>
+    <div id="detail-content">
+      <div id="detail-carousel">
+        <!-- All images will be dynamically inserted here -->
+      </div>
     </div>
-    <!-- Global caption overlay in overview mode -->
-    <div id="overview-caption"></div>
-  </section>
-
-  <!-- HOVER THUMBNAIL FOR PROJECT NUMBERS -->
-  <img id="project-hover-thumbnail" alt="Project Thumbnail" />
+    <div id="detail-caption"></div>
+  </div>
 
   <script src="scripts/main.js"></script>
 </body>
