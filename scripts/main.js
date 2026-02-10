@@ -40,8 +40,13 @@
     introCard.innerHTML = `
       <div class="intro-text">
         <div class="intro-scroll">
-        FRONTSEAT STRATEGIES IS A FULL-SERVICE DESIGN AGENCY.
-        <br>
+
+A STRATEGY-LED DESIGN STUDIO CREATING IDENTITIES, DIGITAL EXPERIENCES, PUBLICATIONS, AND SPATIAL ENVIRONMENTS. <BR>
+FOUNDED BY MANSOOR AKBARZAI AND MINHWAN KIM.
+
+<br>
+<br>
+
           SCROLL DOWN TO VIEW OUR PROJECTS
         </div>
       </div>
@@ -98,25 +103,41 @@
         // Clear carousel
         carousel.innerHTML = '';
 
-        // Create all image elements
+        // Create all image/video elements
         project.images.forEach((imageData, index) => {
-          const img = document.createElement('img');
-          img.className = 'detail-carousel-image';
-          img.src = imageData.src;
-          img.alt = imageData.caption || project.title;
-          img.dataset.index = index;
+          const src = imageData.src;
+          const extension = src.split('.').pop().toLowerCase();
+          let mediaElement;
+
+          // Check if it's a video file
+          if (extension === 'mp4' || extension === 'webm' || extension === 'mov') {
+            mediaElement = document.createElement('video');
+            mediaElement.src = src;
+            mediaElement.autoplay = true;
+            mediaElement.loop = true;
+            mediaElement.muted = true;
+            mediaElement.playsInline = true;
+          } else {
+            // Image or GIF
+            mediaElement = document.createElement('img');
+            mediaElement.src = src;
+          }
+
+          mediaElement.className = 'detail-carousel-image';
+          mediaElement.alt = imageData.caption || project.title;
+          mediaElement.dataset.index = index;
 
           // Add mousemove handler for cursor change
-          img.addEventListener('mousemove', (e) => {
-            const imgIndex = parseInt(e.target.dataset.index);
+          mediaElement.addEventListener('mousemove', (e) => {
+            const mediaIndex = parseInt(e.target.dataset.index);
 
-            // If not the current image, show pointer cursor
-            if (imgIndex !== currentDetailImageIndex) {
+            // If not the current media, show pointer cursor
+            if (mediaIndex !== currentDetailImageIndex) {
               e.target.style.cursor = 'pointer';
               return;
             }
 
-            // For current image, check left/right half
+            // For current media, check left/right half
             const rect = e.target.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const width = rect.width;
@@ -132,11 +153,11 @@
           });
 
           // Add click handler to navigate
-          img.addEventListener('click', (e) => {
+          mediaElement.addEventListener('click', (e) => {
             e.stopPropagation();
             const clickedIndex = parseInt(e.target.dataset.index);
 
-            // If clicking on current image, check left/right half
+            // If clicking on current media, check left/right half
             if (clickedIndex === currentDetailImageIndex) {
               const rect = e.target.getBoundingClientRect();
               const x = e.clientX - rect.left;
@@ -155,7 +176,7 @@
             }
           });
 
-          carousel.appendChild(img);
+          carousel.appendChild(mediaElement);
         });
 
         // Position carousel to center first image
@@ -317,7 +338,7 @@
 
   /* ABOUT LINK */
   aboutLink.addEventListener("click", () => {
-    alert("Frontseat Strategies is a full-service design agency that bridges strategic thinking with expressive visual forms. \n \nWe partner with brands, cultural organizations, and institutions to create meaningful identities, engaging digital experiences, thoughtful publications, and memorable spatial environments.\n  \nOur services are invite-only.");
+    alert("Frontseat Strategies is a design agency for organizations that care about craft and clarity. \n\nWe blend strategic thinking with expressive visual form to create identity systems, digital experiences, publications, and spatial environments that hold up in the real world.");
   });
 
   /* BUILD PROJECT NAVIGATOR */

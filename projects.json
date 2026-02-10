@@ -1,52 +1,31 @@
 [
   {
     "number": 1,
-    "title": "Exhibition Design for MoMA. Vital Sign: Artists and the Body",
+    "title": "MoMA Members",
     "date": "2024",
     "folder": "images/project_01",
     "thumb": "images/project_01/thumb.jpg",
     "images": [
       {
-        "src": "images/project_01/Vital_Sign_0.jpg",
-        "caption": "Exhibition Design for MoMA. Vital Sign: Artists and the Body"
+        "src": "images/project_01/MM_1.mp4",
+        "caption": "MoMA Members Rebranding Application Design"
       },
       {
-        "src": "images/project_01/Vital_Sign_1.jpg",
-        "caption": "Exhibition Design for MoMA. Vital Sign: Artists and the Body"
+        "src": "images/project_01/MM_2.jpg",
+        "caption": "MoMA Members Rebranding Application Design"
       },
       {
-        "src": "images/project_01/Vital_Sign_2.jpg",
-        "caption": "Exhibition Design for MoMA. Vital Sign: Artists and the Body"
+        "src": "images/project_01/MM_3.jpg",
+        "caption": "MoMA Members Rebranding Application Design"
       },
       {
-        "src": "images/project_01/Vital_Sign_3.jpg",
-        "caption": "Exhibition Design for MoMA. Vital Sign: Artists and the Body"
-      },
-      {
-        "src": "images/project_01/Vital_Sign_4.jpg",
-        "caption": "Exhibition Design for MoMA. Vital Sign: Artists and the Body"
+        "src": "images/project_01/MM_4.png",
+        "caption": "MoMA Members Rebranding Application Design"
       }
     ]
   },
   {
     "number": 2,
-    "title": "MoMA Members",
-    "date": "2024",
-    "folder": "images/project_02",
-    "thumb": "images/project_02/thumb.jpg",
-    "images": [
-      {
-        "src": "images/project_02/MM_0.jpg",
-        "caption": "MoMA Members Rebranding Application Design"
-      },
-      {
-        "src": "images/project_02/MM_1.jpg",
-        "caption": "MoMA Members Rebranding Application Design"
-      }
-    ]
-  },
-  {
-    "number": 3,
     "title": "Nike Future Movement",
     "date": "2022",
     "folder": "images/project_03",
@@ -71,7 +50,7 @@
     ]
   },
   {
-    "number": 4,
+    "number": 3,
     "title": "MoMA Educational Material",
     "date": "2024",
     "folder": "images/project_04",
@@ -84,6 +63,43 @@
       {
         "src": "images/project_04/D75_2.jpg",
         "caption": "MoMA, Identity-Based Learning through Art"
+      }
+    ]
+  },
+  {
+    "number": 4,
+    "title": "Exhibition Design for MoMA. Vital Sign: Artists and the Body",
+    "date": "2024",
+    "folder": "images/project_04_2",
+    "thumb": "images/project_04_2/thumb.jpg",
+    "images": [
+      {
+        "src": "images/project_04_2/Vital_Sign_Sketch_0_0.jpg",
+        "caption": "Exhibition Design for MoMA. Vital Sign: Artists and the Body"
+      },
+      {
+        "src": "images/project_04_2/Vital_Sign_Sketch_2.jpg",
+        "caption": "Exhibition Design for MoMA. Vital Sign: Artists and the Body"
+      },
+      {
+        "src": "images/project_04_2/Vital_Sign_Sketch_4.jpg",
+        "caption": "Exhibition Design for MoMA. Vital Sign: Artists and the Body"
+      },
+      {
+        "src": "images/project_04_2/Vital_Sign_Sketch_5.jpg",
+        "caption": "Exhibition Design for MoMA. Vital Sign: Artists and the Body"
+      },
+      {
+        "src": "images/project_04_2/Vital_Sign_Sketch_6.png",
+        "caption": "Exhibition Design for MoMA. Vital Sign: Artists and the Body"
+      },
+      {
+        "src": "images/project_04_2/Vital_Sign_Sketch_7.png",
+        "caption": "Exhibition Design for MoMA. Vital Sign: Artists and the Body"
+      },
+      {
+        "src": "images/project_04_2/Vital_Sign_Sketch_8.png",
+        "caption": "Exhibition Design for MoMA. Vital Sign: Artists and the Body"
       }
     ]
   },
@@ -107,11 +123,23 @@
         "caption": "Open YY Rebranding"
       },
       {
-        "src": "images/project_05/OpenYY_3.jpg",
+        "src": "images/project_05/OpenYY_3_0.jpg",
         "caption": "Open YY Rebranding"
       },
       {
-        "src": "images/project_05/OpenYY_4.jpg",
+        "src": "images/project_05/OpenYY_3_1.png",
+        "caption": "Open YY Rebranding"
+      },
+      {
+        "src": "images/project_05/OpenYY_3_2.png",
+        "caption": "Open YY Rebranding"
+      },
+      {
+        "src": "images/project_05/OpenYY_3_3.jpg",
+        "caption": "Open YY Rebranding"
+      },
+      {
+        "src": "images/project_05/OpenYY_4_4.jpg",
         "caption": "Open YY Rebranding"
       }
     ]
@@ -123,6 +151,10 @@
     "folder": "images/project_06",
     "thumb": "images/project_06/thumb.jpg",
     "images": [
+      {
+        "src": "images/project_06/VZ_00.mp4",
+        "caption": "Verizon Retail Design System"
+      },
       {
         "src": "images/project_06/VZ_01.gif",
         "caption": "Verizon Retail Design System"
@@ -149,15 +181,23 @@
     "thumb": "images/project_07/thumb.jpg",
     "images": [
       {
-        "src": "images/project_07/myplan_00.jpg",
+        "src": "images/project_07/myPlan_01.jpg",
         "caption": "Verizon myPlan"
       },
       {
-        "src": "images/project_07/myplan_01.jpg",
+        "src": "images/project_07/myPlan_02_1.jpg",
         "caption": "Verizon myPlan"
       },
       {
-        "src": "images/project_07/myplan_02.jpg",
+        "src": "images/project_07/myPlan_02_3.jpg",
+        "caption": "Verizon myPlan"
+      },
+      {
+        "src": "images/project_07/myPlan_03.jpg",
+        "caption": "Verizon myPlan"
+      },
+      {
+        "src": "images/project_07/myPlan_04.jpg",
         "caption": "Verizon myPlan"
       }
     ]
@@ -170,23 +210,15 @@
     "thumb": "images/project_08/thumb.jpg",
     "images": [
       {
-        "src": "images/project_08/myPlan_01.jpg",
+        "src": "images/project_08/myplan_00.jpg",
         "caption": "Verizon myPlan Discovery Tool"
       },
       {
-        "src": "images/project_08/myPlan_02_1.jpg",
+        "src": "images/project_08/myplan_01.jpg",
         "caption": "Verizon myPlan Discovery Tool"
       },
       {
-        "src": "images/project_08/myPlan_02_3.jpg",
-        "caption": "Verizon myPlan Discovery Tool"
-      },
-      {
-        "src": "images/project_08/myPlan_03.jpg",
-        "caption": "Verizon myPlan Discovery Tool"
-      },
-      {
-        "src": "images/project_08/myPlan_04.jpg",
+        "src": "images/project_08/myplan_02.jpg",
         "caption": "Verizon myPlan Discovery Tool"
       }
     ]
@@ -286,10 +318,6 @@
     "folder": "images/project_13",
     "thumb": "images/project_13/thumb.jpg",
     "images": [
-      {
-        "src": "images/project_13/ImageRIP_0 copy.jpg",
-        "caption": "Image RIP:After Printing, Work & Planet Earth"
-      },
       {
         "src": "images/project_13/ImageRIP_0.jpg",
         "caption": "Image RIP:After Printing, Work & Planet Earth"

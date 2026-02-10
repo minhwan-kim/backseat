@@ -74,7 +74,7 @@ html, body {
   object-fit: contain;
   user-select: none;
   pointer-events: none;
-  border-radius: 8px;
+  border-radius: 12px;
 }
 
 .project-title {
@@ -251,14 +251,15 @@ html, body {
   will-change: transform;
 }
 
-.detail-carousel-image {
+.detail-carousel-image,
+video.detail-carousel-image {
   width: 80vw;
   max-height: 80vh;
   object-fit: contain;
   flex-shrink: 0;
   user-select: none;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 12px;
 }
 
 .detail-carousel-image:hover {
@@ -282,6 +283,10 @@ html, body {
 
 #detail-view.active #detail-caption {
   opacity: 1;
+}
+
+h1{
+  font-size: 1.5em;
 }
 
 /* ========== TOP BAR ========== */
@@ -590,6 +595,16 @@ html, body {
   #overview-caption {
     font-size: 4rem;
     line-height: 4.8rem;
+  }
+
+  /* Mobile image border radius */
+  .project-card img {
+    border-radius: 8px;
+  }
+
+  .detail-carousel-image,
+  video.detail-carousel-image {
+    border-radius: 8px;
   }
 
   /* Adjust scroll container if needed */
